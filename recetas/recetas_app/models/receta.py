@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Receta(models.Model):
     nombre = models.CharField(max_length=200)
-    usuario = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    usuario = models.ForeignKey(User, null=True,blank=True, on_delete=models.SET_NULL)
 
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
