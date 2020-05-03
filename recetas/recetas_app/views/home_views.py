@@ -1,8 +1,13 @@
 from django.shortcuts import render
 
+from recetas_app.models.receta import Receta
+
 
 def home(request):
-    contexto = {}
+    recetas= Receta.objects.all()
+    contexto = {
+        'recetas': recetas
+    }
     return render(request, "home.html", contexto)
 
 

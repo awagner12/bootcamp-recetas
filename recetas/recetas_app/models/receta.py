@@ -4,9 +4,12 @@ from django.contrib.auth.models import User
 class Receta(models.Model):
     nombre = models.CharField(max_length=200)
     usuario = models.ForeignKey(User, null=True,blank=True, on_delete=models.SET_NULL)
+    imagen = models.ImageField(null=True)
+    slug = models.SlugField(null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
+
 
 
 
@@ -28,6 +31,11 @@ class Ingrediente(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return "{}".format(self.nombre)
+
+    def __unicode__(self):
+        return "{}".format(self.nombre)
 
 
 class Paso(models.Model):
@@ -37,3 +45,9 @@ class Paso(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return "Paso {}".format(self.numero)
+
+    def __unicode__(self):
+        return "Paso {}".format(self.numero)
