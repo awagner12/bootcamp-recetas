@@ -9,6 +9,7 @@ class Receta(models.Model):
     update_at = models.DateTimeField(auto_now=True)
 
 
+
 class Ingrediente(models.Model):
     UNIDADES = [
         ('unidades', 'Unidades'),

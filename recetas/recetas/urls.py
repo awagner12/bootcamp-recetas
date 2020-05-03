@@ -1,8 +1,7 @@
 from django.conf.urls import url
 from django.contrib import admin
 
-from recetas.views import home_views
-from recetas.views import user_views
+from recetas_app.views import home_views, user_views
 
 urlpatterns = [
     url(r'^$', home_views.home, name='home'),
